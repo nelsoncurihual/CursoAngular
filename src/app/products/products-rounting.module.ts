@@ -3,30 +3,33 @@ import { RouterModule, Routes } from '@angular/router';
 import { BasicsPageComponent } from './pages/basics-page/basics-page.component';
 import { NumbersPageComponent } from './pages/numbers-page/numbers-page.component';
 import { UncommonPageComponent } from './pages/uncommon-page/uncommon-page.component';
+import { OrderComponent } from './pages/order/order.component';
 
-const routes:Routes=[
+const routes: Routes = [
   {
-    path:'',
-    component: BasicsPageComponent
+    path: '',
+    component: BasicsPageComponent,
   },
   {
-    path:'numbers',
-    component: NumbersPageComponent
+    path: 'numbers',
+    component: NumbersPageComponent,
   },
   {
-    path:'uncommon',
-    component: UncommonPageComponent
+    path: 'uncommon',
+    component: UncommonPageComponent,
   },
   {
-    path:'**',
-    redirectTo: ''
-  }
+    path: 'custom',
+    component: OrderComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
-  imports:[RouterModule.forChild(routes)],
-  exports:[
-    RouterModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class ProductsRoutingModule { }
+export class ProductsRoutingModule {}
